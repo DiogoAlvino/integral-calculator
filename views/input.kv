@@ -1,0 +1,19 @@
+<InputScreen>
+    name: "input"
+
+    MDFloatLayout:
+        orientation: 'vertical'
+
+        ElementInput:
+            id: input_calc
+            hint_text: "Calculadora"
+            helper_text: "Insira a sua função integral"
+            helper_text_mode: "on_focus"
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+
+        ElementButton:
+            id: send_calc
+            text: "Calcular"
+            pos_hint: {"center_x": 0.5,'center_y': 0.2}
+            size_hint: .1, .1
+            on_release: root.verify_calc()

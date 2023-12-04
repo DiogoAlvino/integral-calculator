@@ -1,0 +1,18 @@
+<ResultScreen>
+    name: "results"
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Resultado"
+            anchor_title: "center"
+            md_bg_color: "white"
+            elevation: .5
+            specific_text_color: "black"
+            left_action_items: [["arrow-left", lambda x: root.go_to_input()]]
+            right_action_items: [[""]]
+
+        MDBoxLayout:
+            id: results_container
+            orientation: "vertical"
