@@ -17,12 +17,14 @@ class ResultScreen(MDScreen):
             results_screen = app.root.get_screen("results")
             results_container = results_screen.ids["results_container"]
 
+            results_container.clear_widgets()
+
             label = MDLabel(text=f"RESULTADO: {self.integral_result}")
             label.id = "resultado"
             results_container.add_widget(label, 3)
             
             app.root.current = "results"
 
-    def create_label(self):
-        label = MDLabel(text=f"RESULTADO: {self.integral_result}")
-        label.id = "resultado"
+    def go_to_input(self):
+        app = App.get_running_app()
+        app.root.current = "input"

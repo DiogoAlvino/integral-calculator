@@ -1,4 +1,4 @@
-from sympy import symbols, integrate
+from sympy import symbols, integrate, latex
 
 def calculator(funcao):
 
@@ -7,4 +7,7 @@ def calculator(funcao):
 
     x = symbols(symbol)
 
-    return {"result": integrate(f)}
+    result = integrate(f, x)
+    format_result = latex(result)
+
+    return {"result": format_result}
