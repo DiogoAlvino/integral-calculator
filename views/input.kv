@@ -1,3 +1,5 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
 <InputScreen>
     name: "input"
 
@@ -16,4 +18,6 @@
             text: "Calcular"
             pos_hint: {"center_x": 0.5,'center_y': 0.2}
             size_hint: .1, .1
-            on_release: root.verify_calc()
+            on_release:
+                root.manager.transition = NoTransition()
+                root.verify_calc()

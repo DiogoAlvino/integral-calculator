@@ -1,8 +1,10 @@
 
 from kivymd.uix.screen import MDScreen
 from kivy.app import App
-from kivymd.uix.label import MDLabel
 from kivy.uix.screenmanager import NoTransition, ScreenManager
+from kivy.uix.image import Image
+from scripts.formatLatex import latex_to_png
+import os
 
 class ResultScreen(MDScreen):
     def __init__(self, integral_result = None, **kwargs):
@@ -19,12 +21,16 @@ class ResultScreen(MDScreen):
 
             results_container.clear_widgets()
 
-            label = MDLabel(text=f"RESULTADO: {self.integral_result}")
-            label.id = "resultado"
-            results_container.add_widget(label, 3)
+            image_path = latex_to_png(self.integral_result, "result.png")
+            image_widget = Image(source=image_path, nocache=True)
+            results_container.add_widget(image_widget)
             
             app.root.current = "results"
 
     def go_to_input(self):
+        previous_image = "result.png"
+        if os.path.exists(previous_image):
+            os.remove(previous_image)
+
         app = App.get_running_app()
         app.root.current = "input"

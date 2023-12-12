@@ -19,6 +19,12 @@ class MainApp(MDApp):
         self.screen_manager.add_widget(ResultScreen())
         return self.screen_manager
     
+    def on_start(self):
+        fonts = [
+            {"name": "Rawline_Bold", "fn_regular": "./assets/rawline-700.ttf"},
+        ]
+        for font in fonts:
+            LabelBase.register(**font)
+
 if __name__ == '__main__':
-    LabelBase.register(name='Rawline_Bold', fn_regular='./assets/rawline-700.ttf')
     MainApp().run()
