@@ -6,6 +6,11 @@
     MDFloatLayout:
         orientation: 'vertical'
 
+        Image:
+            source: 'assets/integral-logo.png'
+            size_hint: (0.2, 1)
+            pos_hint: {'center_x': 0.2,'center_y': 0.5}
+
         ElementInput:
             id: input_calc
             hint_text: "Inserir Função"
@@ -16,8 +21,17 @@
         ElementButton:
             id: send_calc
             text: "Calcular"
-            pos_hint: {"center_x": 0.5,'center_y': 0.2}
-            size_hint: .1, .1
+            pos_hint: {"center_x": 0.5,'center_y': 0.3}
+            size_hint: .4, .1
             on_release:
                 root.manager.transition = NoTransition()
                 root.verify_calc()
+        
+        ElementBackButton:
+            id: manual
+            text: "Ver Manual"
+            pos_hint: {"center_x": 0.5,'center_y': 0.1}
+            size_hint: .1, .1
+            on_release:
+                root.manager.transition = NoTransition()
+                root.go_to_manual()

@@ -1,0 +1,33 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+<ManualScreen>:
+    name: "manual"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        valign: "center"
+
+        MDTopAppBar:
+            title: "Manual"
+            anchor_title: "center"
+            md_bg_color: "white"
+            elevation: .3
+            specific_text_color: "black"
+            left_action_items: [["arrow-left", lambda x: root.back_to_input()]]
+            right_action_items: [[""]]
+
+        MDBoxLayout:
+            orientation: "vertical"
+            valign: "center"
+
+            MDLabel:
+                text: "- Para utilizar o APP você deve ter conhecimento de algumas nomenclaturas"
+                font_name: "Rawline_Bold"
+
+            MDLabel:
+                text: "- Para expoente você pode utilizar ** ou ˆ"
+                font_name: "Rawline_Bold"
+
+            MDLabel:
+                text: "- Para seno você pode utilizar sen ou sin"
+                font_name: "Rawline_Bold"

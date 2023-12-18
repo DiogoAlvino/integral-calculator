@@ -1,0 +1,23 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+<WelcomeScreen>
+    name: "welcome"
+
+    MDFloatLayout:
+        orientation: "vertical"
+
+        MDLabel:
+            text: "INTEGRALIZANDO"
+            font_name: "Rawline_Bold"
+            halign: "center"
+            valign: "middle"
+            font_size: "30sp"
+        
+        ElementButton:
+            id: start
+            text: "Iniciar"
+            pos_hint: {"center_x": 0.5, 'center_y': 0.2}
+            size_hint: .3, .1
+            on_release:
+                root.manager.transition = NoTransition()
+                root.start_app()

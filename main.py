@@ -5,6 +5,8 @@ from kivy.core.window import Window
 from kivy.core.text import LabelBase
 from input import InputScreen
 from results import ResultScreen
+from welcome import WelcomeScreen
+from manual import ManualScreen
 
 Window.size = (350, 600)
 
@@ -15,6 +17,8 @@ class MainApp(MDApp):
         self.screen_manager = MDScreenManager(transition=NoTransition())
 
     def build(self):
+        self.screen_manager.add_widget(WelcomeScreen())
+        self.screen_manager.add_widget(ManualScreen())
         self.screen_manager.add_widget(InputScreen())
         self.screen_manager.add_widget(ResultScreen())
         return self.screen_manager
