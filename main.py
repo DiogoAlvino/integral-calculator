@@ -8,8 +8,6 @@ from results import ResultScreen
 from welcome import WelcomeScreen
 from manual import ManualScreen
 
-Window.size = (350, 600)
-
 class MainApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

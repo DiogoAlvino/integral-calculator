@@ -4,8 +4,6 @@ from kivy.uix.screenmanager import NoTransition, ScreenManager
 from kivymd.uix.screen import MDScreen
 from results import ResultScreen
 
-Window.size = (350, 600)
-
 class ProcessCalc(MDScreen):
     def __init__(self, integral_calc=None, **kwargs):
         super().__init__(**kwargs)
